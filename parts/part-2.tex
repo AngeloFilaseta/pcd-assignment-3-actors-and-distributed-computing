@@ -1,0 +1,22 @@
+\chapter{Distributed Programming}
+\section{Analisi del problema}
+% Analisi del problema, focalizzando in particolare gli aspetti relativi alla concorrenza.
+\subsection{Descrizione del problema}
+Viene fornito un programma che implementa un semplice gioco del puzzle, pensato per un solo giocatore. Scelta un’immagine di dimensioni WxH, il puzzle è rappresentato da una matrice NxM di tessere, dove le tessere hanno dimensione W/M e H/N. L’immagine all’inizio del gioco ha le tessere disposte casualmente, non nel posto giusto. Il giocatore mediante una semplice GUI può scambiare la posizione di due tessere, selezionandole in sequenza.\newline
+
+\noindent Lo scopo dell'assignment è realizzare una versione distribuita multi-user, che consenta a un insieme dinamico di utenti in rete di partecipare alla risoluzione del puzzle. Quando il puzzle è risolto, la sessione finisce e tutti i partecipanti devono vedere un messaggio corrispondente (esempio: “Risolto!”).\newline
+
+\noindent I vincoli da rispettare sono i seguenti:
+\begin{itemize}
+    \item La soluzione deve essere completamente decentralizzata, peer-to-peer (non ci possono essere coordinatori o server centrali).
+    \item Gli utenti devono giocare in modo asincrono, concorrente (non c'è un modello a turni).
+    \item Un giocatore può entrare nel gioco contattando un qualsiasi altro giocatore.
+    \item Devono essere gestite possibili failure - a livello di nodo o rete.
+    \item Si può presupporre che ci sia un numero massimo di giocatori (pari a N).
+\end{itemize}
+
+\noindent Si richiede di implementare:
+\begin{itemize}
+    \item Una versione basata sul paradigma ad attori, in particolare utilizzando il Framework Akka.
+    \item Una versione basata su Java RMI.
+\end{itemize}
